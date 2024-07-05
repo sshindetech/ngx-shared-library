@@ -1,5 +1,5 @@
 {
-  "name": "ngx-shared-library",
+  "name": "@sshindetech/ngx-shared-library",
   "version": "1.0.0",
   "description": "Angular Web and NativeScript shared library",
   "main": "dist/index.js",
