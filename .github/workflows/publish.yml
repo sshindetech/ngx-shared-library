@@ -3,7 +3,7 @@ name: package.json Package
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
