@@ -36,6 +36,6 @@
     "typescript": "^5.4.5"
   },
   "publishConfig": {
-    "@sshindetech:registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com"
   }  
 }
