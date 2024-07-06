@@ -31,7 +31,7 @@ jobs:
           scope: '@sshindetech'
       # - run: npm ci
       - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"
-      - run: npm version --minor
+      - run: npm version patch
       - run: git push --tags && git push
       - run: npm publish
         env:
