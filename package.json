@@ -1,10 +1,12 @@
 {
   "name": "@sshindetech/ngx-shared-library",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Angular Web and NativeScript shared library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "repository": {"url": "https://github.com/sshindetech/ngx-shared-library.git"},
+  "repository": {
+    "url": "https://github.com/sshindetech/ngx-shared-library.git"
+  },
   "files": [
     "/dist"
   ],
@@ -38,5 +40,5 @@
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
-  }  
+  }
 }
