@@ -4,6 +4,7 @@
   "description": "Angular Web and NativeScript shared library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {"url": "https://github.com/sshindetech/ngx-shared-library.git"},
   "files": [
     "/dist"
   ],
