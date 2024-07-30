@@ -11,7 +11,7 @@
     "/dist"
   ],
   "scripts": {
-    "ci": "./node_modules/typescript/bin/tsc && npm run copy-package",
+    "build": "./node_modules/typescript/bin/tsc && npm run copy-package",
     "copy-package": "node build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
