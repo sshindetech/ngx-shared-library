@@ -1,38 +1,38 @@
-name: package.json Package
+# name: package.json Package
 
-on:
-  push:
-    branches:
-      - main
+# on:
+#   push:
+#     branches:
+#       - main
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm install
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: 16
+#       - run: npm ci
+#       - run: npm install
 
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
-    # permissions:
-    #   packages: write
-    #   contents: read
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 16
-          registry-url: https://npm.pkg.github.com/
-          scope: '@sshindetech'
-      # - run: npm ci
-      - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"
-      - run: npm version patch
-      - run: git push --tags && git push
-      - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+#   publish-gpr:
+#     needs: build
+#     runs-on: ubuntu-latest
+#     # permissions:
+#     #   packages: write
+#     #   contents: read
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: 16
+#           registry-url: https://npm.pkg.github.com/
+#           scope: '@sshindetech'
+#       # - run: npm ci
+#       - run: git config --global user.email "$GITHUB_ACTOR@users.noreply.github.com" && git config --global user.name "$GITHUB_ACTOR"
+#       - run: npm version patch
+#       - run: git push --tags && git push
+#       - run: npm publish
+#         env:
+#           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
