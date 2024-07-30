@@ -1,4 +1,4 @@
-import { OnInit } from "@angular/core";
+import { Directive, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, Validators } from "@angular/forms";
 import { IAuthService } from "../../providers/authentication/auth.service.interface";
 
