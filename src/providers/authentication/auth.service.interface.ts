@@ -1,5 +1,6 @@
 
 export interface IAuthService {
+    createAccount(user: any): Promise<Response>;
     login(username: string, password: string): void;
     logout(): void;
     isAuthenticated(): boolean;

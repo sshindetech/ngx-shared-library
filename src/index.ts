@@ -3,6 +3,7 @@ export * from './config/app-config';
 export * from './components/login/login.component';
 export * from './components/cms-card/cms-card.component';
 export * from './components/find-a-doctor/find-a-doctor.component';
+export * from './components/create-account/create-account.component';
 
 export * from './providers/authentication/abstract-auth.service';
 export * from './providers/authentication/auth.service.interface';

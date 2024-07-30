@@ -42,6 +42,15 @@ export abstract class AbstractAuthService implements IAuthService {
       }    
     }
     
+    public async createAccount(user: any): Promise<Response> {
+      const ci = this;    
+      return fetch(`${ci.configuration.apiHost}/auth/profile`,  { 
+        method: 'POST', 
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({...user})
+      });
+    }
+
     public abstract getAccessToken(): string | null ;
     
     public abstract saveAccessToken(access_token: string): void ;
