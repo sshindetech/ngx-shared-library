@@ -1,9 +1,8 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { IAuthService } from "../../providers/authentication/auth.service.interface";
 
 export abstract class AbstractCreateAccountComponent<T extends IAuthService, F extends FormBuilder> implements OnInit {    
-  @ViewChild('content', { read: TemplateRef }) modal:TemplateRef<any> | undefined;
   message = '';
   createAccountForm: FormGroup;
   roles = ['user', 'admin']; // Define roles for the dropdown
