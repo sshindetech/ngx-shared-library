@@ -16,16 +16,8 @@ export abstract class AbstractLoginComponent<T extends IAuthService, F extends F
         }      
         
         ci.loginForm = ci.formBuilder.group({
-            username: new FormControl('', [
-                Validators.required,
-                Validators.minLength(1),
-                Validators.maxLength(250),
-            ]),
-            password: new FormControl('', [
-                Validators.required,
-                Validators.minLength(1),
-                Validators.maxLength(250),
-            ]),
+            username: ['', [ Validators.required, Validators.minLength(1), Validators.maxLength(250),]],
+            password: ['', [ Validators.required, Validators.minLength(1), Validators.maxLength(250), ]],
         });        
     }
     
@@ -35,9 +27,6 @@ export abstract class AbstractLoginComponent<T extends IAuthService, F extends F
         if(ci.loginForm.valid) {
             let username = ci.loginForm.value.username;
             let password = ci.loginForm.value.password;
-            
-            console.log("Username:", username);
-            console.log("Password:", password);
             
             try {
                 const res = await ci.authService.login(username ? username: '', password ? password: '');
@@ -52,14 +41,6 @@ export abstract class AbstractLoginComponent<T extends IAuthService, F extends F
                 ci.showError();
             }
         }
-    }
-    
-    public get username() {
-        return this.loginForm.get('username')!;
-    }
-    
-    public get password() {
-        return this.loginForm.get('password')!;
     }
     
     abstract sucessRediect(): void;
